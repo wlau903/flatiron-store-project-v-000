@@ -71,6 +71,7 @@ describe 'Feature Test: Store', :type => :feature do
 
         it "tells the user who they are signed in as" do
           visit store_path
+          #binding.pry
           expect(page).to have_content("Signed in as #{@user.email}")
         end
 
@@ -82,6 +83,7 @@ describe 'Feature Test: Store', :type => :feature do
         it "lets users sign out" do
           visit store_path
           click_link("Sign out")
+          #binding.pry
           expect(page.current_path).to eq(store_path)
           expect(page).to have_link("sign in")
         end

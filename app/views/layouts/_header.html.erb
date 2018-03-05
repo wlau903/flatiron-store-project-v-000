@@ -1,8 +1,10 @@
 <nav class="">
     <ul>
-        <li> <%= link_to "Store Home", store_path %> </li>
+        <li><%= link_to "Store Home", store_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path if !user_signed_in? %></li>
+        <li><%= link_to 'sign in', new_user_session_path if !user_signed_in? %></li>
         <% if !!@cart %>
-          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
+          <li> <%= link_to "Cart", cart_path(@cart) %></li>
         <% end %>
     </ul>
 </nav>
